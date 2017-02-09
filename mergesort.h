@@ -1,11 +1,6 @@
 //Merge Sort:
 
-/*This is the code for the merge sort itself. In order to use it, the
-merge function needs to be added. It needs to take the two sorted arrays
-and combine them into a single sorted array.
-*/
-
-//function declaration
+//function declaration so that merge is not implicitly defined in merge_sort
 
 void merge(int[],int,int,int,int);
 

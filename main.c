@@ -17,7 +17,11 @@
 
 int main(){
 
-  int choice = 1; // to store user choice of sorting algorithm
+
+
+  int choice = 17; // to store user choice of sorting algorithm
+                   // needs to be initialized to non 0 value so loop will execute on first iteration
+                   // chose not to use values 1-5 so that it will use the dafault case if assignment fails on user input.
 
   while(choice != 0){  // loop while user wants to sort
       printf("%s" , "Please enter the number of integers you would like to input for processing.\n");
@@ -31,7 +35,7 @@ int main(){
       if(array_size > 1){
         printf("%s""%i""%s", "Please enter " , array_size , " numbers followed by enter\n");
 
-        for(int i = 0 ; i < array_size ; i++){
+        for(int i = 0 ; i < array_size ; i++){ // assigning values to array from console
           int j;
           scanf("%d" , &j);
           array[i] = j;
@@ -50,10 +54,10 @@ int main(){
       printf("%s" , "5. Selection Sort\n");
       printf("%s" , "0. Quit Sorting\n");
 
-      scanf("%d" , &choice);
+      scanf("%d" , &choice); // if assignment fails choice = 17 and default case will be processed below.
 
 
-      switch(choice){
+      switch(choice){  // selects the sorting algorithm to be used
 
         case 0:
           return 0;
@@ -77,14 +81,16 @@ int main(){
           selection(array , array_size);
           printf("%s" , "\nAfter Selection Sort\n");
           break;
-
+        default:
+          printf("%s" , "That is not a valid choice, exiting the program\n");
+          return 0;
       }
 
-      int i = 0;
-      for( i ; i<array_size ; i++ ){
+      int i = 0;                              // resets i each iteration
+      for( i ; i<array_size ; i++ ){          // prints sorted array
         printf("%i""%s" ,  array[i] , "\n");
       }
-      printf("%s" , "\n");
+      printf("%s" , "\n");                    // just for formatting output
   }
 
 }

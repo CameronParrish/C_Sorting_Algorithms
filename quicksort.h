@@ -1,5 +1,4 @@
 int Pivot(int[],int,int);
-  // void Swap(int,int);
 
 void Quicksort( int a[], int first, int last )
 {
